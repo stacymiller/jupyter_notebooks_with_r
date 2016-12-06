@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jupyter Notebooks with R</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Jupyter Notebooks with R">
+  <meta name="author" content="Анастасия Миллер">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Jupyter Notebooks with R</h1>
+    <h2>зачем, как и что ещё бывает</h2>
+    <p>Анастасия Миллер<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <style>
+em {
+  font-style: italic
+}
+
+strong {
+  font-weight: bold;
+}
+
+sup {
+  top: -0.5em;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+bigfont {
+  font-size: 70px;
+  font-weight: bold;
+  color: #535E43;
+}
+
+op {
+  opacity: 0.5;
+}
+
+img {
+  position: absolute;
+  top: 15px;
+  z-index: 2;
+  width:90%;
+  height:100%;
+  max-width: 960px;
+  overflow: hidden;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+</style>
+
+<h1>Зачем</h1>
+
+<h3>Для кого:</h3>
+
+<ul>
+<li>аналитики</li>
+<li>студенты / преподаватели</li>
+</ul>
+
+<h3>Для какой задачи:</h3>
+
+<ul>
+<li>используется интерпретируемый язык программирования</li>
+<li>набор данных помещается в память</li>
+<li>результат — отчёт <op>или код решения</op></li>
+</ul>
+
+<p>\(\Rightarrow\) удобно использовать интерактивные сессии</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h1>Зачем</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Блокноты или IDE?</h2>
+
+<div style='float:left;width:48%;' class='centered'>
+  <h3>IDE (R Studiо)</h3>
+
+<ul>
+<li>одна и та же сессия при выполнении скрипта и в консоли</li>
+<li>любую строчку скрипта можно выполнить в консоли за одно нажатие клавиш</li>
+<li>графики в том же окне</li>
+<li>многострочный ввод в консоли</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Блокноты</h3>
+
+<ul>
+<li><op>одна и та же сессия при выполнении скрипта и в консоли</op></li>
+<li><op>любую строчку скрипта можно выполнить в консоли за одно нажатие клавиш</op></li>
+<li><op>графики в том же окне</op></li>
+<li><op>многострочный ввод в консоли</op></li>
+<li>видимая взаимосвязь кода и его результатов</li>
+<li><op>только нужный output (в противовес консоли)</op></li>
+<li><op>(almost) presentation-ready формат</op></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <article data-timings="">
+    <p><img src="./assets/img/r_studio_code_results.png" alt="R Studio code vs.results"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <article data-timings="">
+    <p><img src="./assets//img/jupyter_code_results.png" alt="Jupyter code vs. results"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h1>Зачем</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Блокноты или IDE?</h2>
+
+<div style='float:left;width:48%;' class='centered'>
+  <h3>IDE (R Studiо)</h3>
+
+<ul>
+<li>одна и та же сессия при выполнении скрипта и в консоли</li>
+<li>любую строчку скрипта можно выполнить в консоли за одно нажатие клавиш</li>
+<li>графики в том же окне</li>
+<li>многострочный ввод в консоли</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Блокноты</h3>
+
+<ul>
+<li><op>одна и та же сессия при выполнении скрипта и в консоли</op></li>
+<li><op>любую строчку скрипта можно выполнить в консоли за одно нажатие клавиш</op></li>
+<li><op>графики в том же окне</op></li>
+<li><op>многострочный ввод в консоли</op></li>
+<li><op>видимая взаимосвязь кода и его результатов</op></li>
+<li>только нужный output (в противовес консоли)</li>
+<li><op>(almost) presentation-ready формат</op></li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <article data-timings="">
+    <p><img src="./assets/img/r_studio_console.png" alt="R Studio cconsole"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <article data-timings="">
+    <p><img src="./assets/img/jupyter_console_1.png" alt="Jupyter console 1"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <article data-timings="">
+    <p><img src="./assets/img/jupyter_console_2.png" alt="Jupyter console 2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <article data-timings="">
+    <p><img src="./assets/img/jupyter_console_3.png" alt="Jupyter console 3"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h1>Зачем</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Блокноты или IDE?</h2>
+
+<div style='float:left;width:48%;' class='centered'>
+  <h3>IDE (R Studiо)</h3>
+
+<ul>
+<li>одна и та же сессия при выполнении скрипта и в консоли</li>
+<li>любую строчку скрипта можно выполнить в консоли за одно нажатие клавиш</li>
+<li>графики в том же окне</li>
+<li>многострочный ввод в консоли</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Блокноты</h3>
+
+<ul>
+<li><op>одна и та же сессия при выполнении скрипта и в консоли</op></li>
+<li><op>любую строчку скрипта можно выполнить в консоли за одно нажатие клавиш</op></li>
+<li><op>графики в том же окне</op></li>
+<li><op>многострочный ввод в консоли</op></li>
+<li><op>видимая взаимосвязь кода и его результатов</op></li>
+<li><op>только нужный output (в противовес консоли)</op></li>
+<li>(almost) presentation-ready формат</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h1>Зачем</h1>
+  </hgroup>
+  <article data-timings="">
+    <p>Процесс подготовки отчёта:</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <h3>IDE (R Studiо)</h3>
+
+<div style="text-align: center;">
+Console
+<br>
+$\uparrow\downarrow$
+<br>
+R Script
+<br>
+$\downarrow$
+<br>
+R Markdown
+</div>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Блокноты</h3>
+
+<p>Notebook</p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h1>Зачем</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Блокноты или IDE?</h2>
+
+<div style='float:left;width:48%;' class='centered'>
+  <h3>IDE (R Studiо)</h3>
+
+<ul>
+<li>одна и та же сессия при выполнении скрипта и в консоли</li>
+<li>любую строчку скрипта можно выполнить в консоли за одно нажатие клавиш</li>
+<li>графики в том же окне</li>
+<li>многострочный ввод в консоли</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Блокноты</h3>
+
+<ul>
+<li>одна и та же сессия при выполнении скрипта и в консоли</li>
+<li>любую строчку скрипта можно выполнить в консоли за одно нажатие клавиш</li>
+<li>графики в том же окне</li>
+<li>многострочный ввод в консоли</li>
+<li>видимая взаимосвязь кода и его результатов</li>
+<li>только нужный output (в противовес консоли)</li>
+<li>(almost) presentation-ready формат</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h1>Как</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Установка (Jupyter)</h2>
+
+<ol>
+<li>Python</li>
+<li>Jupyter</li>
+<li><a href="https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages">Зависимости для ядра</a> (kernel) для нужного языка</li>
+<li>Ядро Jupyter для нужного языка (<a href="https://irkernel.github.io">R</a>)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h1>Как</h1>
+  </hgroup>
+  <article data-timings="">
+    <h2>Что могут Jupyter Notebooks</h2>
+
+<ul>
+<li><a href="https://nbviewer.jupyter.org/github/ipython/ipython/blob/3.x/examples/IPython%20Kernel/Rich%20Output.ipynb">rich media representations </a>, из которого следуют
+
+<ul>
+<li><a href="http://ipython.readthedocs.io/en/stable/config/integrating.html">Переопределяемое представление класса</a></li>
+<li>Интерактивные виджеты</li>
+</ul></li>
+<li>Cell / line magics
+
+<ul>
+<li><code>rpy2</code> — интерактивное взаимодействие между Python и R и другие удовольствия</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h1>Что ещё есть</h1>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><a href="http://beakernotebook.com">Beaker</a> — интерактивное взаимодействие между R и Python через свою библиотеку</li>
+<li><a href="https://cloud.sagemath.com">Sage</a>
+
+<ul>
+<li>облачное хранилище</li>
+<li>поддержка всех основных инструментов для исследовательской деятельности</li>
+<li>спорный дизайн</li>
+</ul></li>
+<li><a href="http://rmarkdown.rstudio.com/r_notebooks.html">R Notebook</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Зачем'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title=''>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title=''>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Зачем'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title=''>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title=''>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title=''>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Зачем'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Зачем'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Зачем'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Как'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Как'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Что ещё есть'>
+         15
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
